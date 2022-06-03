@@ -1,3 +1,6 @@
+%define libname	%mklibname xpathselect- %{api} %{major}
+%define develname %mklibname xpathselect -d
+
 Name:           xpathselect
 Version:	1.4
 Release:	1
@@ -14,20 +17,20 @@ BuildRequires:	boost-devel
 This library allows you to select arbitrary objects in an object tree using a
 small subset of the XPath specification.
 
-%package -n libxpathselect1_4
+%package -n %{libname}
 Summary:	Select objects in an object tree using XPath queries
 Group:	System/Libraries
 
-%description -n libxpathselect1_4
+%description -n %{libname}
 This library allows you to select arbitrary objects in an object tree using a
 small subset of the XPath specification.
 
-%package devel
+%package -n %{develname}
 Summary:	Select objects in an object tree using XPath queries - development files
 Group:	Development/Libraries/C and C++
-Requires:	libxpathselect1_4 = %{version}
+Requires:	%{libname}  = %{EVRD}
 
-%description devel
+%description -n %{develname}
 This library allows you to select arbitrary objects in an object tree using a
 small subset of the XPath specification.
 
@@ -44,13 +47,11 @@ This package contains development files for xpathselect.
 %install
 %make_install -C build
 
-%files -n libxpathselect1_4
-%defattr(-,root,root)
+%files -n %{libname}
 %doc COPYING
-%{_libdir}/libxpathselect.so.1.4
+%{_libdir}/libxpathselect.so.%{version}
 
-%files devel
-%defattr(-,root,root)
+%files -n %{develname}
 %{_includedir}/xpathselect
 %{_libdir}/libxpathselect.so
 %{_libdir}/pkgconfig/xpathselect.pc
