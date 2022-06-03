@@ -35,10 +35,10 @@ This package contains development files for xpathselect.
 
 
 %prep
-%autosetup -c -p1
+%autosetup -n xpathselect-1.4+15.10.20150824.1 -p1
 
 %build
-cmake -DCMAKE_INSTALL_PREFIX=%{_prefix} ..
+%cmake -DCMAKE_INSTALL_PREFIX=%{_prefix}
 %make_build
 
 %install
