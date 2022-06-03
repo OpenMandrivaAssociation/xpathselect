@@ -46,7 +46,7 @@ This package contains development files for xpathselect.
 
 %files -n libxpathselect1_4
 %defattr(-,root,root)
-%doc debian/changelog COPYING
+%doc COPYING
 %{_libdir}/libxpathselect.so.1.4
 
 %files devel
