@@ -1,17 +1,15 @@
 Name:           xpathselect
-Version:	1.4.20140708
-Release:	0
+Version:	1.4
+Release:	1
 License:	GPL-3.0
 Summary:	Select objects in an object tree using XPath queries
 Url:	https://launchpad.net/xpathselect
 Group:	System/Libraries
-Source:	%{name}-%{version}.tar.xz
+Source:	https://launchpad.net/ubuntu/+archive/primary/+sourcefiles/xpathselect/1.4+15.10.20150824.1-0ubuntu2/xpathselect_1.4+15.10.20150824.1.orig.tar.gz
 Patch:	xpathselect-no-test.patch
 BuildRequires:	cmake
-BuildRequires:	gcc-c++
 BUildRequires:	pkg-config
 BuildRequires:	boost-devel
-BuildRoot:      %{_tmppath}/%{name}-%{version}-build
 
 %description
 This library allows you to select arbitrary objects in an object tree using a
@@ -38,22 +36,14 @@ This package contains development files for xpathselect.
 
 
 %prep
-%setup -q
-%patch -p1
+%autosetup -c -p1
 
 %build
-mkdir build && cd build
 cmake -DCMAKE_INSTALL_PREFIX=%{_prefix} ..
-make %{?_smp_mflags}
+%make_build
 
 %install
-cd build
-%make_install
-cd ..
-
-%post -n libxpathselect1_4 -p /sbin/ldconfig
-
-%postun -n libxpathselect1_4 -p /sbin/ldconfig
+%make_install -C build
 
 %files -n libxpathselect1_4
 %defattr(-,root,root)
