@@ -1,4 +1,5 @@
-%define libname	%mklibname xpathselect- %{api} %{major}
+%define api 1.4
+%define libname	%mklibname xpathselect- %{api}
 %define develname %mklibname xpathselect -d
 
 Name:           xpathselect
@@ -49,7 +50,7 @@ This package contains development files for xpathselect.
 
 %files -n %{libname}
 %doc COPYING
-%{_libdir}/libxpathselect.so.%{version}
+%{_libdir}/libxpathselect.so.%{api}
 
 %files -n %{develname}
 %{_includedir}/xpathselect
