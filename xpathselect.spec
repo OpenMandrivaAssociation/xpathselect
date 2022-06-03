@@ -6,7 +6,7 @@ Summary:	Select objects in an object tree using XPath queries
 Url:	https://launchpad.net/xpathselect
 Group:	System/Libraries
 Source:	https://launchpad.net/ubuntu/+archive/primary/+sourcefiles/xpathselect/1.4+15.10.20150824.1-0ubuntu2/xpathselect_1.4+15.10.20150824.1.orig.tar.gz
-Patch:	xpathselect-no-test.patch
+#Patch:	xpathselect-no-test.patch
 BuildRequires:	cmake
 BUildRequires:	pkg-config
 BuildRequires:	boost-devel
