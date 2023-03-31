@@ -4,7 +4,7 @@
 
 Name:           xpathselect
 Version:	1.4
-Release:	1
+Release:	2
 License:	GPL-3.0
 Summary:	Select objects in an object tree using XPath queries
 Url:	https://launchpad.net/xpathselect
